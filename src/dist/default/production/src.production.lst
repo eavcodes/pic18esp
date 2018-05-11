@@ -1,0 +1,2069 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.45 build -152302408 
+                                                                                               Wed May 09 18:30:16 2018
+
+Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1,inline
+    14                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text7,global,reloc=2,class=CODE,delta=1,group=1
+    19                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    21                           	psect	text10,global,reloc=2,class=CODE,delta=1,group=1
+    22                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    23                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    24                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    25  0000                     
+    26                           ; Version 1.45 (B)
+    27                           ; Generated 30/01/2018 GMT
+    28                           ; 
+    29                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    30                           ; All rights reserved.
+    31                           ; 
+    32                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    33                           ; 
+    34                           ; Redistribution and use in source and binary forms, with or without modification, are
+    35                           ; permitted provided that the following conditions are met:
+    36                           ; 
+    37                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    38                           ;        conditions and the following disclaimer.
+    39                           ; 
+    40                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    41                           ;        of conditions and the following disclaimer in the documentation and/or other
+    42                           ;        materials provided with the distribution.
+    43                           ; 
+    44                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    45                           ;        software without specific prior written permission.
+    46                           ; 
+    47                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    48                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    49                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    50                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    51                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    52                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    53                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    54                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    55                           ; 
+    56                           ; 
+    57                           ; Code-generator required, PIC18F4550 Definitions
+    58                           ; 
+    59                           ; SFR Addresses
+    60  0000                     
+    61                           	psect	idataCOMRAM
+    62  000B96                     __pidataCOMRAM:
+    63                           	opt stack 0
+    64                           
+    65                           ;initializer for __esp8266_waitResponse@F4816
+    66  000B96  B0                 	db	low STR_5
+    67  000B97  08                 	db	high STR_5
+    68  000B98  84                 	db	low STR_29
+    69  000B99  08                 	db	high STR_29
+    70  000B9A  94                 	db	low STR_30
+    71  000B9B  08                 	db	high STR_30
+    72  000B9C  5D                 	db	low STR_31
+    73  000B9D  08                 	db	high STR_31
+    74  000B9E  70                 	db	low STR_32
+    75  000B9F  08                 	db	high STR_32
+    76  000BA0  77                 	db	low STR_33
+    77  000BA1  08                 	db	high STR_33
+    78                           
+    79                           	psect	smallconst
+    80  000800                     __psmallconst:
+    81                           	opt stack 0
+    82  000800  00                 	db	0
+    83  000801  0001               	dw	1
+    84  000803  000A               	dw	10
+    85  000805  0064               	dw	100
+    86  000807  03E8               	dw	1000
+    87  000809  2710               	dw	10000
+    88  00080B                     __end_of_dpowers:
+    89                           	opt stack 0
+    90  00080B                     __esp8266_waitResponse@F4818:
+    91                           	opt stack 0
+    92  00080B  01                 	db	1
+    93  00080C  02                 	db	2
+    94  00080D  03                 	db	3
+    95  00080E  04                 	db	4
+    96  00080F  05                 	db	5
+    97  000810  06                 	db	6
+    98  000811                     __end_of__esp8266_waitResponse@F4818:
+    99                           	opt stack 0
+   100  000811                     __esp8266_waitResponse@F4814:
+   101                           	opt stack 0
+   102  000811  02                 	db	2
+   103  000812  05                 	db	5
+   104  000813  04                 	db	4
+   105  000814  09                 	db	9
+   106  000815  06                 	db	6
+   107  000816  06                 	db	6
+   108  000817                     __end_of__esp8266_waitResponse@F4814:
+   109                           	opt stack 0
+   110  0000                     _TXREG	set	4013
+   111  0000                     _TRISCbits	set	3988
+   112  0000                     _SPBRGH	set	4016
+   113  0000                     _SPBRG	set	4015
+   114  0000                     _PIE1bits	set	3997
+   115  0000                     _PIR1bits	set	3998
+   116  0000                     _RCSTAbits	set	4011
+   117  0000                     _TXSTAbits	set	4012
+   118  0000                     _RCSTA	set	4011
+   119  0000                     _TXSTA	set	4012
+   120  0000                     _RCREG	set	4014
+   121  0000                     _TRISE	set	3990
+   122  0000                     _TRISD	set	3989
+   123  0000                     _TRISC	set	3988
+   124  0000                     _TRISB	set	3987
+   125  0000                     _TRISA	set	3986
+   126  0000                     _TXSTA1bits	set	4012
+   127  0000                     _CREN	set	32092
+   128  0000                     _OERR	set	32089
+   129  0000                     _LATC2	set	31834
+   130  0000                     _RCIF	set	31989
+   131  0000                     _LATC1	set	31833
+   132  000817  41                 	db	65	;'A'
+   133  000818  54                 	db	84	;'T'
+   134  000819  2B                 	db	43
+   135  00081A  43                 	db	67	;'C'
+   136  00081B  49                 	db	73	;'I'
+   137  00081C  50                 	db	80	;'P'
+   138  00081D  53                 	db	83	;'S'
+   139  00081E  54                 	db	84	;'T'
+   140  00081F  41                 	db	65	;'A'
+   141  000820  52                 	db	82	;'R'
+   142  000821  54                 	db	84	;'T'
+   143  000822  3D                 	db	61	;'='
+   144  000823  22                 	db	34
+   145  000824  00                 	db	0
+   146  000825  41                 	db	65	;'A'
+   147  000826  54                 	db	84	;'T'
+   148  000827  2B                 	db	43
+   149  000828  43                 	db	67	;'C'
+   150  000829  49                 	db	73	;'I'
+   151  00082A  50                 	db	80	;'P'
+   152  00082B  53                 	db	83	;'S'
+   153  00082C  45                 	db	69	;'E'
+   154  00082D  4E                 	db	78	;'N'
+   155  00082E  44                 	db	68	;'D'
+   156  00082F  3D                 	db	61	;'='
+   157  000830  00                 	db	0
+   158  000831  41                 	db	65	;'A'
+   159  000832  54                 	db	84	;'T'
+   160  000833  2B                 	db	43
+   161  000834  43                 	db	67	;'C'
+   162  000835  57                 	db	87	;'W'
+   163  000836  51                 	db	81	;'Q'
+   164  000837  41                 	db	65	;'A'
+   165  000838  50                 	db	80	;'P'
+   166  000839  0D                 	db	13
+   167  00083A  0A                 	db	10
+   168  00083B  00                 	db	0
+   169  00083C  41                 	db	65	;'A'
+   170  00083D  54                 	db	84	;'T'
+   171  00083E  2B                 	db	43
+   172  00083F  43                 	db	67	;'C'
+   173  000840  49                 	db	73	;'I'
+   174  000841  46                 	db	70	;'F'
+   175  000842  53                 	db	83	;'S'
+   176  000843  52                 	db	82	;'R'
+   177  000844  0D                 	db	13
+   178  000845  0A                 	db	10
+   179  000846  00                 	db	0
+   180  000847  41                 	db	65	;'A'
+   181  000848  54                 	db	84	;'T'
+   182  000849  2B                 	db	43
+   183  00084A  43                 	db	67	;'C'
+   184  00084B  57                 	db	87	;'W'
+   185  00084C  4A                 	db	74	;'J'
+   186  00084D  41                 	db	65	;'A'
+   187  00084E  50                 	db	80	;'P'
+   188  00084F  3D                 	db	61	;'='
+   189  000850  22                 	db	34
+   190  000851  00                 	db	0
+   191  000852  41                 	db	65	;'A'
+   192  000853  54                 	db	84	;'T'
+   193  000854  2B                 	db	43
+   194  000855  43                 	db	67	;'C'
+   195  000856  57                 	db	87	;'W'
+   196  000857  4D                 	db	77	;'M'
+   197  000858  4F                 	db	79	;'O'
+   198  000859  44                 	db	68	;'D'
+   199  00085A  45                 	db	69	;'E'
+   200  00085B  3D                 	db	61	;'='
+   201  00085C  00                 	db	0
+   202  00085D                     STR_31:
+   203  00085D  6E                 	db	110	;'n'
+   204  00085E  6F                 	db	111	;'o'
+   205  00085F  20                 	db	32
+   206  000860  63                 	db	99	;'c'
+   207  000861  68                 	db	104	;'h'
+   208  000862  61                 	db	97	;'a'
+   209  000863  6E                 	db	110	;'n'
+   210  000864  67                 	db	103	;'g'
+   211  000865  65                 	db	101	;'e'
+   212  000866  00                 	db	0
+   213  000867  41                 	db	65	;'A'
+   214  000868  54                 	db	84	;'T'
+   215  000869  2B                 	db	43
+   216  00086A  52                 	db	82	;'R'
+   217  00086B  53                 	db	83	;'S'
+   218  00086C  54                 	db	84	;'T'
+   219  00086D  0D                 	db	13
+   220  00086E  0A                 	db	10
+   221  00086F  00                 	db	0
+   222  000870                     STR_32:
+   223  000870  4C                 	db	76	;'L'
+   224  000871  69                 	db	105	;'i'
+   225  000872  6E                 	db	110	;'n'
+   226  000873  6B                 	db	107	;'k'
+   227  000874  65                 	db	101	;'e'
+   228  000875  64                 	db	100	;'d'
+   229  000876  00                 	db	0
+   230  000877                     STR_33:
+   231  000877  55                 	db	85	;'U'
+   232  000878  6E                 	db	110	;'n'
+   233  000879  6C                 	db	108	;'l'
+   234  00087A  69                 	db	105	;'i'
+   235  00087B  6E                 	db	110	;'n'
+   236  00087C  6B                 	db	107	;'k'
+   237  00087D  00                 	db	0
+   238  00087E  2B                 	db	43
+   239  00087F  49                 	db	73	;'I'
+   240  000880  50                 	db	80	;'P'
+   241  000881  44                 	db	68	;'D'
+   242  000882  2C                 	db	44
+   243  000883  00                 	db	0
+   244  000884                     STR_29:
+   245  000884  72                 	db	114	;'r'
+   246  000885  65                 	db	101	;'e'
+   247  000886  61                 	db	97	;'a'
+   248  000887  64                 	db	100	;'d'
+   249  000888  79                 	db	121	;'y'
+   250  000889  00                 	db	0
+   251  00088A                     STR_26:
+   252  00088A  0D                 	db	13
+   253  00088B  0A                 	db	10
+   254  00088C  0D                 	db	13
+   255  00088D  0A                 	db	10
+   256  00088E  00                 	db	0
+   257  00088F                     STR_1:
+   258  00088F  41                 	db	65	;'A'
+   259  000890  54                 	db	84	;'T'
+   260  000891  0D                 	db	13
+   261  000892  0A                 	db	10
+   262  000893  00                 	db	0
+   263  000894                     STR_30:
+   264  000894  46                 	db	70	;'F'
+   265  000895  41                 	db	65	;'A'
+   266  000896  49                 	db	73	;'I'
+   267  000897  4C                 	db	76	;'L'
+   268  000898  00                 	db	0
+   269  000899  22                 	db	34
+   270  00089A  0D                 	db	13
+   271  00089B  0A                 	db	10
+   272  00089C  00                 	db	0
+   273  00089D                     STR_9:
+   274  00089D  22                 	db	34
+   275  00089E  2C                 	db	44
+   276  00089F  22                 	db	34
+   277  0008A0  00                 	db	0
+   278  0008A1  41                 	db	65	;'A'
+   279  0008A2  54                 	db	84	;'T'
+   280  0008A3  45                 	db	69	;'E'
+   281  0008A4  00                 	db	0
+   282  0008A5  54                 	db	84	;'T'
+   283  0008A6  43                 	db	67	;'C'
+   284  0008A7  50                 	db	80	;'P'
+   285  0008A8  00                 	db	0
+   286  0008A9  55                 	db	85	;'U'
+   287  0008AA  44                 	db	68	;'D'
+   288  0008AB  50                 	db	80	;'P'
+   289  0008AC  00                 	db	0
+   290  0008AD  22                 	db	34
+   291  0008AE  2C                 	db	44
+   292  0008AF  00                 	db	0
+   293  0008B0                     STR_5:
+   294  0008B0  4F                 	db	79	;'O'
+   295  0008B1  4B                 	db	75	;'K'
+   296  0008B2  00                 	db	0
+   297  0008B3                     STR_20:
+   298  0008B3  25                 	db	37
+   299  0008B4  75                 	db	117	;'u'
+   300  0008B5  00                 	db	0
+   301  0000                     
+   302                           ; #config settings
+   303  0008B6  00                 	db	0	; dummy byte at the end
+   304  0000                     
+   305                           	psect	cinit
+   306  000A96                     __pcinit:
+   307                           	opt stack 0
+   308  000A96                     start_initialization:
+   309                           	opt stack 0
+   310  000A96                     __initialization:
+   311                           	opt stack 0
+   312                           
+   313                           ; Initialize objects allocated to COMRAM (12 bytes)
+   314                           ; load TBLPTR registers with __pidataCOMRAM
+   315  000A96  0E96               	movlw	low __pidataCOMRAM
+   316  000A98  6EF6               	movwf	tblptrl,c
+   317  000A9A  0E0B               	movlw	high __pidataCOMRAM
+   318  000A9C  6EF7               	movwf	tblptrh,c
+   319  000A9E  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   320  000AA0  6EF8               	movwf	tblptru,c
+   321  000AA2  EE00  F038         	lfsr	0,__pdataCOMRAM
+   322  000AA6  EE10 F00C          	lfsr	1,12
+   323  000AAA                     copy_data0:
+   324  000AAA  0009               	tblrd		*+
+   325  000AAC  CFF5 FFEE          	movff	tablat,postinc0
+   326  000AB0  50E5               	movf	postdec1,w,c
+   327  000AB2  50E1               	movf	fsr1l,w,c
+   328  000AB4  E1FA               	bnz	copy_data0
+   329                           
+   330                           ; Clear objects allocated to COMRAM (18 bytes)
+   331  000AB6  EE00  F026         	lfsr	0,__pbssCOMRAM
+   332  000ABA  0E12               	movlw	18
+   333  000ABC                     clear_0:
+   334  000ABC  6AEE               	clrf	postinc0,c
+   335  000ABE  06E8               	decf	wreg,f,c
+   336  000AC0  E1FD               	bnz	clear_0
+   337  000AC2                     end_of_initialization:
+   338                           	opt stack 0
+   339  000AC2                     __end_of__initialization:
+   340                           	opt stack 0
+   341  000AC2  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   342  000AC4  6EF8               	movwf	tblptru,c
+   343  000AC6  0100               	movlb	0
+   344  000AC8  EF66  F005         	goto	_main	;jump to C main() function
+   345                           tblptru	equ	0xFF8
+   346                           tblptrh	equ	0xFF7
+   347                           tblptrl	equ	0xFF6
+   348                           tablat	equ	0xFF5
+   349                           postinc0	equ	0xFEE
+   350                           wreg	equ	0xFE8
+   351                           postdec1	equ	0xFE5
+   352                           fsr1l	equ	0xFE1
+   353                           
+   354                           	psect	bssCOMRAM
+   355  000026                     __pbssCOMRAM:
+   356                           	opt stack 0
+   357  000026                     __esp8266_waitResponse@F4812:
+   358                           	opt stack 0
+   359  000026                     	ds	6
+   360  00002C                     esp8266_send@F4796:
+   361                           	opt stack 0
+   362  00002C                     	ds	6
+   363  000032                     esp8266_start@F4793:
+   364                           	opt stack 0
+   365  000032                     	ds	5
+   366  000037                     _USART_Status:
+   367                           	opt stack 0
+   368  000037                     	ds	1
+   369                           tblptru	equ	0xFF8
+   370                           tblptrh	equ	0xFF7
+   371                           tblptrl	equ	0xFF6
+   372                           tablat	equ	0xFF5
+   373                           postinc0	equ	0xFEE
+   374                           wreg	equ	0xFE8
+   375                           postdec1	equ	0xFE5
+   376                           fsr1l	equ	0xFE1
+   377                           
+   378                           	psect	dataCOMRAM
+   379  000038                     __pdataCOMRAM:
+   380                           	opt stack 0
+   381  000038                     __esp8266_waitResponse@F4816:
+   382                           	opt stack 0
+   383  000038                     	ds	12
+   384                           tblptru	equ	0xFF8
+   385                           tblptrh	equ	0xFF7
+   386                           tblptrl	equ	0xFF6
+   387                           tablat	equ	0xFF5
+   388                           postinc0	equ	0xFEE
+   389                           wreg	equ	0xFE8
+   390                           postdec1	equ	0xFE5
+   391                           fsr1l	equ	0xFE1
+   392                           
+   393                           	psect	cstackCOMRAM
+   394  000001                     __pcstackCOMRAM:
+   395                           	opt stack 0
+   396  000001                     ??__esp8266_waitResponse:
+   397  000001                     WriteUSART@data:
+   398                           	opt stack 0
+   399  000001                     delay_ms@timeMS:
+   400                           	opt stack 0
+   401  000001                     OpenUSART@spbrg:
+   402                           	opt stack 0
+   403                           
+   404                           ; 2 bytes @ 0x0
+   405  000001                     	ds	1
+   406  000002                     SendUnsignedByte@byte:
+   407                           	opt stack 0
+   408                           
+   409                           ; 1 bytes @ 0x1
+   410  000002                     	ds	1
+   411  000003                     ??_delay_ms:
+   412  000003                     __esp8266_putch@bt:
+   413                           	opt stack 0
+   414  000003                     OpenUSART@config:
+   415                           	opt stack 0
+   416                           
+   417                           ; 1 bytes @ 0x2
+   418  000003                     	ds	1
+   419  000004                     __esp8266_print@ptr:
+   420                           	opt stack 0
+   421  000004                     __esp8266_waitResponse@strings:
+   422                           	opt stack 0
+   423                           
+   424                           ; 12 bytes @ 0x3
+   425  000004                     	ds	2
+   426  000006                     
+   427                           ; 1 bytes @ 0x5
+   428  000006                     	ds	10
+   429  000010                     __esp8266_waitResponse@lengths:
+   430                           	opt stack 0
+   431                           
+   432                           ; 6 bytes @ 0xF
+   433  000010                     	ds	6
+   434  000016                     __esp8266_waitResponse@responses:
+   435                           	opt stack 0
+   436                           
+   437                           ; 6 bytes @ 0x15
+   438  000016                     	ds	6
+   439  00001C                     __esp8266_waitResponse@so_far:
+   440                           	opt stack 0
+   441                           
+   442                           ; 6 bytes @ 0x1B
+   443  00001C                     	ds	6
+   444  000022                     __esp8266_waitResponse@received:
+   445                           	opt stack 0
+   446                           
+   447                           ; 1 bytes @ 0x21
+   448  000022                     	ds	1
+   449  000023                     __esp8266_waitResponse@response:
+   450                           	opt stack 0
+   451                           
+   452                           ; 1 bytes @ 0x22
+   453  000023                     	ds	1
+   454  000024                     __esp8266_waitResponse@continue_loop:
+   455                           	opt stack 0
+   456                           
+   457                           ; 1 bytes @ 0x23
+   458  000024                     	ds	1
+   459  000025                     __esp8266_waitResponse@i:
+   460                           	opt stack 0
+   461                           
+   462                           ; 1 bytes @ 0x24
+   463  000025                     	ds	1
+   464  000026                     tblptru	equ	0xFF8
+   465                           tblptrh	equ	0xFF7
+   466                           tblptrl	equ	0xFF6
+   467                           tablat	equ	0xFF5
+   468                           postinc0	equ	0xFEE
+   469                           wreg	equ	0xFE8
+   470                           postdec1	equ	0xFE5
+   471                           fsr1l	equ	0xFE1
+   472                           
+   473                           ; 1 bytes @ 0x25
+   474 ;;
+   475 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   476 ;;
+   477 ;; *************** function _main *****************
+   478 ;; Defined at:
+   479 ;;		line 14 in file "main.c"
+   480 ;; Parameters:    Size  Location     Type
+   481 ;;		None
+   482 ;; Auto vars:     Size  Location     Type
+   483 ;;		None
+   484 ;; Return value:  Size  Location     Type
+   485 ;;                  1    wreg      void 
+   486 ;; Registers used:
+   487 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   488 ;; Tracked objects:
+   489 ;;		On entry : 0/0
+   490 ;;		On exit  : 0/0
+   491 ;;		Unchanged: 0/0
+   492 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   493 ;;      Params:         0       0       0       0       0       0       0       0       0
+   494 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   495 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   496 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   497 ;;Total ram usage:        0 bytes
+   498 ;; Hardware stack levels required when called:    5
+   499 ;; This function calls:
+   500 ;;		_InitConfigPorts
+   501 ;;		_InitSerialUART
+   502 ;;		_delay_ms
+   503 ;;		_esp8266_isStarted
+   504 ;; This function is called by:
+   505 ;;		Startup code after reset
+   506 ;; This function uses a non-reentrant model
+   507 ;;
+   508                           
+   509                           	psect	text0
+   510  000ACC                     __ptext0:
+   511                           	opt stack 0
+   512  000ACC                     _main:
+   513                           	opt stack 26
+   514                           
+   515                           ;main.c: 17: InitConfigPorts();
+   516                           
+   517                           ;incstack = 0
+   518  000ACC  EC9E  F005         	call	_InitConfigPorts	;wreg free
+   519                           
+   520                           ;main.c: 18: InitSerialUART();
+   521  000AD0  ECBC  F005         	call	_InitSerialUART	;wreg free
+   522  000AD4                     
+   523                           ;main.c: 23: LATC1 = 0;;
+   524  000AD4  928B               	bcf	3979,1,c	;volatile
+   525                           
+   526                           ;main.c: 25: }while(!esp8266_isStarted());
+   527  000AD6  EC8F  F005         	call	_esp8266_isStarted	;wreg free
+   528  000ADA  A0D8               	btfss	status,0,c
+   529  000ADC  D7FB               	goto	l15
+   530  000ADE                     u730:
+   531                           
+   532                           ;main.c: 29: {
+   533                           ;main.c: 30: LATC1 = 1;;
+   534                           
+   535                           ;main.c: 28: for(;;)
+   536  000ADE  828B               	bsf	3979,1,c	;volatile
+   537                           
+   538                           ;main.c: 31: delay_ms(1000);
+   539  000AE0  0E03               	movlw	3
+   540  000AE2  6E02               	movwf	delay_ms@timeMS+1,c
+   541  000AE4  0EE8               	movlw	232
+   542  000AE6  6E01               	movwf	delay_ms@timeMS,c
+   543  000AE8  EC7E  F005         	call	_delay_ms	;wreg free
+   544                           
+   545                           ;main.c: 33: LATC1 = 0;;
+   546  000AEC  928B               	bcf	3979,1,c	;volatile
+   547                           
+   548                           ;main.c: 34: delay_ms(1000);
+   549  000AEE  0E03               	movlw	3
+   550  000AF0  6E02               	movwf	delay_ms@timeMS+1,c
+   551  000AF2  0EE8               	movlw	232
+   552  000AF4  6E01               	movwf	delay_ms@timeMS,c
+   553  000AF6  EC7E  F005         	call	_delay_ms	;wreg free
+   554                           
+   555                           ;main.c: 35: }
+   556  000AFA  D7F1               	goto	u730
+   557  000AFC                     __end_of_main:
+   558                           	opt stack 0
+   559                           tblptru	equ	0xFF8
+   560                           tblptrh	equ	0xFF7
+   561                           tblptrl	equ	0xFF6
+   562                           tablat	equ	0xFF5
+   563                           postinc0	equ	0xFEE
+   564                           wreg	equ	0xFE8
+   565                           postdec1	equ	0xFE5
+   566                           fsr1l	equ	0xFE1
+   567                           status	equ	0xFD8
+   568                           
+   569 ;; *************** function _esp8266_isStarted *****************
+   570 ;; Defined at:
+   571 ;;		line 87 in file "include/esp8266.c"
+   572 ;; Parameters:    Size  Location     Type
+   573 ;;		None
+   574 ;; Auto vars:     Size  Location     Type
+   575 ;;		None
+   576 ;; Return value:  Size  Location     Type
+   577 ;;		None               void
+   578 ;; Registers used:
+   579 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   580 ;; Tracked objects:
+   581 ;;		On entry : 0/0
+   582 ;;		On exit  : 0/0
+   583 ;;		Unchanged: 0/0
+   584 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   585 ;;      Params:         0       0       0       0       0       0       0       0       0
+   586 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   587 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   588 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   589 ;;Total ram usage:        0 bytes
+   590 ;; Hardware stack levels used:    1
+   591 ;; Hardware stack levels required when called:    4
+   592 ;; This function calls:
+   593 ;;		__esp8266_print
+   594 ;;		__esp8266_waitResponse
+   595 ;; This function is called by:
+   596 ;;		_main
+   597 ;; This function uses a non-reentrant model
+   598 ;;
+   599                           
+   600                           	psect	text1
+   601  000B1E                     __ptext1:
+   602                           	opt stack 0
+   603  000B1E                     _esp8266_isStarted:
+   604                           	opt stack 26
+   605                           
+   606                           ;esp8266.c: 88: _esp8266_print("AT\r\n");
+   607                           
+   608                           ;incstack = 0
+   609  000B1E  0E8F               	movlw	low STR_1
+   610  000B20  6E04               	movwf	__esp8266_print@ptr,c
+   611  000B22  0E08               	movlw	high STR_1
+   612  000B24  6E05               	movwf	__esp8266_print@ptr+1,c
+   613  000B26  EC22  F005         	call	__esp8266_print	;wreg free
+   614                           
+   615                           ;esp8266.c: 89: return (_esp8266_waitResponse() == 1);
+   616  000B2A  EC5C  F004         	call	__esp8266_waitResponse	;wreg free
+   617  000B2E  06E8               	decf	wreg,f,c
+   618  000B30  B4D8               	btfsc	status,2,c
+   619  000B32  D002               	goto	l1331
+   620  000B34  90D8               	bcf	status,0,c
+   621  000B36  0012               	return	
+   622  000B38                     l1331:
+   623  000B38  80D8               	bsf	status,0,c
+   624  000B3A  0012               	return	
+   625  000B3C                     __end_of_esp8266_isStarted:
+   626                           	opt stack 0
+   627                           tblptru	equ	0xFF8
+   628                           tblptrh	equ	0xFF7
+   629                           tblptrl	equ	0xFF6
+   630                           tablat	equ	0xFF5
+   631                           postinc0	equ	0xFEE
+   632                           wreg	equ	0xFE8
+   633                           postdec1	equ	0xFE5
+   634                           fsr1l	equ	0xFE1
+   635                           status	equ	0xFD8
+   636                           
+   637 ;; *************** function __esp8266_waitResponse *****************
+   638 ;; Defined at:
+   639 ;;		line 359 in file "include/esp8266.c"
+   640 ;; Parameters:    Size  Location     Type
+   641 ;;		None
+   642 ;; Auto vars:     Size  Location     Type
+   643 ;;  i               1   36[COMRAM] unsigned char 
+   644 ;;  strings        12    3[COMRAM] PTR const unsigned char 
+   645 ;;		 -> STR_33(7), STR_32(7), STR_31(10), STR_30(5), 
+   646 ;;		 -> STR_29(6), STR_28(3), 
+   647 ;;  so_far          6   27[COMRAM] unsigned char [6]
+   648 ;;  responses       6   21[COMRAM] const unsigned char [6]
+   649 ;;  lengths         6   15[COMRAM] const unsigned char [6]
+   650 ;;  continue_loo    1   35[COMRAM] unsigned char 
+   651 ;;  response        1   34[COMRAM] unsigned char 
+   652 ;;  received        1   33[COMRAM] unsigned char 
+   653 ;; Return value:  Size  Location     Type
+   654 ;;                  1    wreg      unsigned char 
+   655 ;; Registers used:
+   656 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   657 ;; Tracked objects:
+   658 ;;		On entry : 0/0
+   659 ;;		On exit  : 0/0
+   660 ;;		Unchanged: 0/0
+   661 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   662 ;;      Params:         0       0       0       0       0       0       0       0       0
+   663 ;;      Locals:        34       0       0       0       0       0       0       0       0
+   664 ;;      Temps:          3       0       0       0       0       0       0       0       0
+   665 ;;      Totals:        37       0       0       0       0       0       0       0       0
+   666 ;;Total ram usage:       37 bytes
+   667 ;; Hardware stack levels used:    1
+   668 ;; Hardware stack levels required when called:    1
+   669 ;; This function calls:
+   670 ;;		__esp8266_getch
+   671 ;; This function is called by:
+   672 ;;		_esp8266_isStarted
+   673 ;;		_esp8266_restart
+   674 ;;		_esp8266_mode
+   675 ;;		_esp8266_connect
+   676 ;;		_esp8266_start
+   677 ;;		_esp8266_send
+   678 ;; This function uses a non-reentrant model
+   679 ;;
+   680                           
+   681                           	psect	text2
+   682  0008B8                     __ptext2:
+   683                           	opt stack 0
+   684  0008B8                     __esp8266_waitResponse:
+   685                           	opt stack 28
+   686                           
+   687                           ;esp8266.c: 360: unsigned char so_far[6] = {0,0,0,0,0,0};
+   688                           
+   689                           ;incstack = 0
+   690  0008B8  EE20  F026         	lfsr	2,__esp8266_waitResponse@F4812
+   691  0008BC  EE10  F01C         	lfsr	1,__esp8266_waitResponse@so_far
+   692  0008C0  0E05               	movlw	5
+   693  0008C2                     u191:
+   694  0008C2  CFDB FFE3          	movff	plusw2,plusw1
+   695  0008C6  06E8               	decf	wreg,f,c
+   696  0008C8  E2FC               	bc	u191
+   697                           
+   698                           ;esp8266.c: 361: unsigned const char lengths[6] = {2,5,4,9,6,6};
+   699  0008CA  0E11               	movlw	low __esp8266_waitResponse@F4814
+   700  0008CC  6EF6               	movwf	tblptrl,c
+   701  0008CE                     	if	1	;There is more than 1 active tblptr byte
+   702  0008CE  0E08               	movlw	high __esp8266_waitResponse@F4814
+   703  0008D0  6EF7               	movwf	tblptrh,c
+   704  0008D2                     	endif
+   705  0008D2                     	if	0	;There are less than 3 active tblptr bytes
+   706  0008D2                     	endif
+   707  0008D2  EE20  F010         	lfsr	2,__esp8266_waitResponse@lengths
+   708  0008D6  0E05               	movlw	5
+   709  0008D8                     u200:
+   710  0008D8  0009               	tblrd		*+
+   711  0008DA  CFF5 FFDE          	movff	tablat,postinc2
+   712  0008DE  06E8               	decf	wreg,f,c
+   713  0008E0  E2FB               	bc	u200
+   714                           
+   715                           ;esp8266.c: 362: unsigned const char* strings[6] = {"OK", "ready", "FAIL", "no change", 
+      +                          "Linked", "Unlink"};
+   716  0008E2  EE20  F038         	lfsr	2,__esp8266_waitResponse@F4816
+   717  0008E6  EE10  F004         	lfsr	1,__esp8266_waitResponse@strings
+   718  0008EA  0E0B               	movlw	11
+   719  0008EC                     u211:
+   720  0008EC  CFDB FFE3          	movff	plusw2,plusw1
+   721  0008F0  06E8               	decf	wreg,f,c
+   722  0008F2  E2FC               	bc	u211
+   723                           
+   724                           ;esp8266.c: 363: unsigned const char responses[6] = {1, 2, 3, 4, 5, 6};
+   725  0008F4  0E0B               	movlw	low __esp8266_waitResponse@F4818
+   726  0008F6  6EF6               	movwf	tblptrl,c
+   727  0008F8                     	if	1	;There is more than 1 active tblptr byte
+   728  0008F8  0E08               	movlw	high __esp8266_waitResponse@F4818
+   729  0008FA  6EF7               	movwf	tblptrh,c
+   730  0008FC                     	endif
+   731  0008FC                     	if	0	;There are less than 3 active tblptr bytes
+   732  0008FC                     	endif
+   733  0008FC  EE20  F016         	lfsr	2,__esp8266_waitResponse@responses
+   734  000900  0E05               	movlw	5
+   735  000902                     u220:
+   736  000902  0009               	tblrd		*+
+   737  000904  CFF5 FFDE          	movff	tablat,postinc2
+   738  000908  06E8               	decf	wreg,f,c
+   739  00090A  E2FB               	bc	u220
+   740                           
+   741                           ;esp8266.c: 364: unsigned char received;
+   742                           ;esp8266.c: 365: unsigned char response;
+   743                           ;esp8266.c: 366: bool continue_loop = 1;
+   744  00090C  0E01               	movlw	1
+   745  00090E  6E24               	movwf	__esp8266_waitResponse@continue_loop,c
+   746                           
+   747                           ;esp8266.c: 367: while (continue_loop) {
+   748  000910  D064               	goto	u260
+   749  000912                     
+   750                           ;esp8266.c: 368: received = _esp8266_getch();
+   751  000912  ECB4  F005         	call	__esp8266_getch	;wreg free
+   752  000916  6E22               	movwf	__esp8266_waitResponse@received,c
+   753                           
+   754                           ;esp8266.c: 369: for (unsigned char i = 0; i < 6; i++) {
+   755  000918  0E00               	movlw	0
+   756  00091A  6E25               	movwf	__esp8266_waitResponse@i,c
+   757  00091C                     l1085:
+   758  00091C  0E05               	movlw	5
+   759  00091E  6425               	cpfsgt	__esp8266_waitResponse@i,c
+   760  000920  D001               	goto	l205
+   761  000922  D05B               	goto	u260
+   762  000924                     l205:
+   763                           
+   764                           ;esp8266.c: 370: if (strings[i][so_far[i]] == received) {
+   765  000924  5025               	movf	__esp8266_waitResponse@i,w,c
+   766  000926  0D02               	mullw	2
+   767  000928  0E04               	movlw	low __esp8266_waitResponse@strings
+   768  00092A  24F3               	addwf	prodl,w,c
+   769  00092C  6ED9               	movwf	fsr2l,c
+   770  00092E  0E00               	movlw	high __esp8266_waitResponse@strings
+   771  000930  20F4               	addwfc	prodh,w,c
+   772  000932  6EDA               	movwf	fsr2h,c
+   773  000934  CFDE F001          	movff	postinc2,??__esp8266_waitResponse
+   774  000938  CFDD F002          	movff	postdec2,??__esp8266_waitResponse+1
+   775  00093C  5025               	movf	__esp8266_waitResponse@i,w,c
+   776  00093E  0D01               	mullw	1
+   777  000940  0E1C               	movlw	low __esp8266_waitResponse@so_far
+   778  000942  24F3               	addwf	prodl,w,c
+   779  000944  6ED9               	movwf	fsr2l,c
+   780  000946  0E00               	movlw	high __esp8266_waitResponse@so_far
+   781  000948  20F4               	addwfc	prodh,w,c
+   782  00094A  6EDA               	movwf	fsr2h,c
+   783  00094C  50DF               	movf	indf2,w,c
+   784  00094E  6E03               	movwf	(??__esp8266_waitResponse+2)& (0+255),c
+   785  000950  5003               	movf	??__esp8266_waitResponse+2,w,c
+   786  000952  0D01               	mullw	1
+   787  000954  50F3               	movf	prodl,w,c
+   788  000956  2601               	addwf	??__esp8266_waitResponse,f,c
+   789  000958  50F4               	movf	prodh,w,c
+   790  00095A  2202               	addwfc	??__esp8266_waitResponse+1,f,c
+   791  00095C  C001  FFF6         	movff	??__esp8266_waitResponse,tblptrl
+   792  000960  C002  FFF7         	movff	??__esp8266_waitResponse+1,tblptrh
+   793  000964                     	if	0	;tblptru may be non-zero
+   794  000964                     	endif
+   795  000964                     	if	0	;tblptru may be non-zero
+   796  000964                     	endif
+   797  000964  0008               	tblrd		*
+   798  000966  50F5               	movf	tablat,w,c
+   799  000968  1822               	xorwf	__esp8266_waitResponse@received,w,c
+   800  00096A  A4D8               	btfss	status,2,c
+   801  00096C  D02A               	goto	l207
+   802                           
+   803                           ;esp8266.c: 371: so_far[i]++;
+   804  00096E  5025               	movf	__esp8266_waitResponse@i,w,c
+   805  000970  0D01               	mullw	1
+   806  000972  0E1C               	movlw	low __esp8266_waitResponse@so_far
+   807  000974  24F3               	addwf	prodl,w,c
+   808  000976  6ED9               	movwf	fsr2l,c
+   809  000978  0E00               	movlw	high __esp8266_waitResponse@so_far
+   810  00097A  20F4               	addwfc	prodh,w,c
+   811  00097C  6EDA               	movwf	fsr2h,c
+   812  00097E  2ADF               	incf	indf2,f,c
+   813                           
+   814                           ;esp8266.c: 372: if (so_far[i] == lengths[i]) {
+   815  000980  5025               	movf	__esp8266_waitResponse@i,w,c
+   816  000982  0D01               	mullw	1
+   817  000984  0E10               	movlw	low __esp8266_waitResponse@lengths
+   818  000986  24F3               	addwf	prodl,w,c
+   819  000988  6ED9               	movwf	fsr2l,c
+   820  00098A  0E00               	movlw	high __esp8266_waitResponse@lengths
+   821  00098C  20F4               	addwfc	prodh,w,c
+   822  00098E  6EDA               	movwf	fsr2h,c
+   823  000990  5025               	movf	__esp8266_waitResponse@i,w,c
+   824  000992  0D01               	mullw	1
+   825  000994  0E1C               	movlw	low __esp8266_waitResponse@so_far
+   826  000996  24F3               	addwf	prodl,w,c
+   827  000998  6EE1               	movwf	fsr1l,c
+   828  00099A  0E00               	movlw	high __esp8266_waitResponse@so_far
+   829  00099C  20F4               	addwfc	prodh,w,c
+   830  00099E  6EE2               	movwf	fsr1h,c
+   831  0009A0  50DE               	movf	postinc2,w,c
+   832  0009A2  18E6               	xorwf	postinc1,w,c
+   833  0009A4  A4D8               	btfss	status,2,c
+   834  0009A6  D017               	goto	l209
+   835                           
+   836                           ;esp8266.c: 373: response = responses[i];
+   837  0009A8  5025               	movf	__esp8266_waitResponse@i,w,c
+   838  0009AA  0D01               	mullw	1
+   839  0009AC  0E16               	movlw	low __esp8266_waitResponse@responses
+   840  0009AE  24F3               	addwf	prodl,w,c
+   841  0009B0  6ED9               	movwf	fsr2l,c
+   842  0009B2  0E00               	movlw	high __esp8266_waitResponse@responses
+   843  0009B4  20F4               	addwfc	prodh,w,c
+   844  0009B6  6EDA               	movwf	fsr2h,c
+   845  0009B8  50DF               	movf	indf2,w,c
+   846  0009BA  6E23               	movwf	__esp8266_waitResponse@response,c
+   847                           
+   848                           ;esp8266.c: 374: continue_loop = 0;
+   849  0009BC  0E00               	movlw	0
+   850  0009BE  6E24               	movwf	__esp8266_waitResponse@continue_loop,c
+   851                           
+   852                           ;esp8266.c: 375: }
+   853                           ;esp8266.c: 376: } else {
+   854  0009C0  D00A               	goto	l209
+   855  0009C2                     l207:
+   856                           
+   857                           ;esp8266.c: 377: so_far[i] = 0;
+   858  0009C2  5025               	movf	__esp8266_waitResponse@i,w,c
+   859  0009C4  0D01               	mullw	1
+   860  0009C6  0E1C               	movlw	low __esp8266_waitResponse@so_far
+   861  0009C8  24F3               	addwf	prodl,w,c
+   862  0009CA  6ED9               	movwf	fsr2l,c
+   863  0009CC  0E00               	movlw	high __esp8266_waitResponse@so_far
+   864  0009CE  20F4               	addwfc	prodh,w,c
+   865  0009D0  6EDA               	movwf	fsr2h,c
+   866  0009D2  0E00               	movlw	0
+   867  0009D4  6EDF               	movwf	indf2,c
+   868  0009D6                     l209:
+   869  0009D6  2A25               	incf	__esp8266_waitResponse@i,f,c
+   870  0009D8  D7A1               	goto	l1085
+   871  0009DA                     u260:
+   872  0009DA  5024               	movf	__esp8266_waitResponse@continue_loop,w,c
+   873  0009DC  A4D8               	btfss	status,2,c
+   874  0009DE  D799               	goto	l204
+   875                           
+   876                           ;esp8266.c: 378: }
+   877                           ;esp8266.c: 379: }
+   878                           ;esp8266.c: 380: }
+   879                           ;esp8266.c: 381: return response;
+   880  0009E0  5023               	movf	__esp8266_waitResponse@response,w,c
+   881  0009E2  0012               	return	
+   882  0009E4                     __end_of__esp8266_waitResponse:
+   883                           	opt stack 0
+   884                           tblptru	equ	0xFF8
+   885                           tblptrh	equ	0xFF7
+   886                           tblptrl	equ	0xFF6
+   887                           tablat	equ	0xFF5
+   888                           prodh	equ	0xFF4
+   889                           prodl	equ	0xFF3
+   890                           postinc0	equ	0xFEE
+   891                           wreg	equ	0xFE8
+   892                           postinc1	equ	0xFE6
+   893                           postdec1	equ	0xFE5
+   894                           plusw1	equ	0xFE3
+   895                           fsr1h	equ	0xFE2
+   896                           fsr1l	equ	0xFE1
+   897                           indf2	equ	0xFDF
+   898                           postinc2	equ	0xFDE
+   899                           postdec2	equ	0xFDD
+   900                           plusw2	equ	0xFDB
+   901                           fsr2h	equ	0xFDA
+   902                           fsr2l	equ	0xFD9
+   903                           status	equ	0xFD8
+   904                           
+   905 ;; *************** function __esp8266_getch *****************
+   906 ;; Defined at:
+   907 ;;		line 57 in file "include/esp8266.c"
+   908 ;; Parameters:    Size  Location     Type
+   909 ;;		None
+   910 ;; Auto vars:     Size  Location     Type
+   911 ;;		None
+   912 ;; Return value:  Size  Location     Type
+   913 ;;                  1    wreg      unsigned char 
+   914 ;; Registers used:
+   915 ;;		wreg, status,2
+   916 ;; Tracked objects:
+   917 ;;		On entry : 0/0
+   918 ;;		On exit  : 0/0
+   919 ;;		Unchanged: 0/0
+   920 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   921 ;;      Params:         0       0       0       0       0       0       0       0       0
+   922 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   923 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   924 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   925 ;;Total ram usage:        0 bytes
+   926 ;; Hardware stack levels used:    1
+   927 ;; This function calls:
+   928 ;;		Nothing
+   929 ;; This function is called by:
+   930 ;;		__esp8266_waitResponse
+   931 ;;		_esp8266_ip
+   932 ;;		_esp8266_send
+   933 ;;		_esp8266_receive
+   934 ;;		__esp8266_waitFor
+   935 ;; This function uses a non-reentrant model
+   936 ;;
+   937                           
+   938                           	psect	text3
+   939  000B68                     __ptext3:
+   940                           	opt stack 0
+   941  000B68                     __esp8266_getch:
+   942                           	opt stack 28
+   943                           
+   944                           ;esp8266.c: 59: if(OERR)
+   945                           
+   946                           ;incstack = 0
+   947  000B68  A2AB               	btfss	4011,1,c	;volatile
+   948  000B6A  D002               	goto	l104
+   949                           
+   950                           ;esp8266.c: 60: {
+   951                           ;esp8266.c: 61: CREN = 0;
+   952  000B6C  98AB               	bcf	4011,4,c	;volatile
+   953                           
+   954                           ;esp8266.c: 62: CREN = 1;
+   955  000B6E  88AB               	bsf	4011,4,c	;volatile
+   956  000B70                     l104:
+   957                           
+   958                           ;esp8266.c: 63: }
+   959                           ;esp8266.c: 65: while(!RCIF);
+   960  000B70  AA9E               	btfss	3998,5,c	;volatile
+   961  000B72  D7FE               	goto	l104
+   962                           
+   963                           ;esp8266.c: 67: return RCREG;
+   964  000B74  50AE               	movf	4014,w,c	;volatile
+   965  000B76  0012               	return	
+   966  000B78                     __end_of__esp8266_getch:
+   967                           	opt stack 0
+   968                           tblptru	equ	0xFF8
+   969                           tblptrh	equ	0xFF7
+   970                           tblptrl	equ	0xFF6
+   971                           tablat	equ	0xFF5
+   972                           prodh	equ	0xFF4
+   973                           prodl	equ	0xFF3
+   974                           postinc0	equ	0xFEE
+   975                           wreg	equ	0xFE8
+   976                           postinc1	equ	0xFE6
+   977                           postdec1	equ	0xFE5
+   978                           plusw1	equ	0xFE3
+   979                           fsr1h	equ	0xFE2
+   980                           fsr1l	equ	0xFE1
+   981                           indf2	equ	0xFDF
+   982                           postinc2	equ	0xFDE
+   983                           postdec2	equ	0xFDD
+   984                           plusw2	equ	0xFDB
+   985                           fsr2h	equ	0xFDA
+   986                           fsr2l	equ	0xFD9
+   987                           status	equ	0xFD8
+   988                           
+   989 ;; *************** function __esp8266_print *****************
+   990 ;; Defined at:
+   991 ;;		line 309 in file "include/esp8266.c"
+   992 ;; Parameters:    Size  Location     Type
+   993 ;;  ptr             2    3[COMRAM] PTR const unsigned char 
+   994 ;;		 -> STR_24(3), STR_23(12), esp8266_send@length_str(6), STR_21(3), 
+   995 ;;		 -> esp8266_start@port_str(5), STR_19(3), STR_18(4), STR_17(4), 
+   996 ;;		 -> STR_16(4), STR_15(14), STR_13(11), STR_11(11), 
+   997 ;;		 -> STR_10(4), STR_9(4), STR_8(11), STR_7(3), 
+   998 ;;		 -> STR_6(11), STR_4(3), STR_3(4), STR_2(9), 
+   999 ;;		 -> STR_1(5), 
+  1000 ;; Auto vars:     Size  Location     Type
+  1001 ;;		None
+  1002 ;; Return value:  Size  Location     Type
+  1003 ;;                  1    wreg      void 
+  1004 ;; Registers used:
+  1005 ;;		wreg, fsr0l, fsr0h, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+  1006 ;; Tracked objects:
+  1007 ;;		On entry : 0/0
+  1008 ;;		On exit  : 0/0
+  1009 ;;		Unchanged: 0/0
+  1010 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1011 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1012 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1013 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1014 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1015 ;;Total ram usage:        2 bytes
+  1016 ;; Hardware stack levels used:    1
+  1017 ;; Hardware stack levels required when called:    3
+  1018 ;; This function calls:
+  1019 ;;		__esp8266_putch
+  1020 ;; This function is called by:
+  1021 ;;		_esp8266_isStarted
+  1022 ;;		_esp8266_restart
+  1023 ;;		_esp8266_echoCmds
+  1024 ;;		_esp8266_mode
+  1025 ;;		_esp8266_connect
+  1026 ;;		_esp8266_disconnect
+  1027 ;;		_esp8266_ip
+  1028 ;;		_esp8266_start
+  1029 ;;		_esp8266_send
+  1030 ;; This function uses a non-reentrant model
+  1031 ;;
+  1032                           
+  1033                           	psect	text4
+  1034  000A44                     __ptext4:
+  1035                           	opt stack 0
+  1036  000A44                     __esp8266_print:
+  1037                           	opt stack 26
+  1038                           
+  1039                           ;esp8266.c: 310: while (*ptr != 0) {
+  1040                           
+  1041                           ;incstack = 0
+  1042  000A44  D014               	goto	l182
+  1043  000A46                     
+  1044                           ;esp8266.c: 311: _esp8266_putch(*ptr++);
+  1045  000A46  C004  FFF6         	movff	__esp8266_print@ptr,tblptrl
+  1046  000A4A  C005  FFF7         	movff	__esp8266_print@ptr+1,tblptrh
+  1047  000A4E  6AF8               	clrf	tblptru,c
+  1048  000A50  0E07               	movlw	(high __ramtop+-1)
+  1049  000A52  64F7               	cpfsgt	tblptrh,c
+  1050  000A54  D003               	bra	u687
+  1051  000A56  0008               	tblrd		*
+  1052  000A58  50F5               	movf	tablat,w,c
+  1053  000A5A  D005               	bra	u680
+  1054  000A5C                     u687:
+  1055  000A5C  CFF6 FFE9          	movff	tblptrl,fsr0l
+  1056  000A60  CFF7 FFEA          	movff	tblptrh,fsr0h
+  1057  000A64  50EF               	movf	indf0,w,c
+  1058  000A66                     u680:
+  1059  000A66  ECD1  F005         	call	__esp8266_putch
+  1060  000A6A  4A04               	infsnz	__esp8266_print@ptr,f,c
+  1061  000A6C  2A05               	incf	__esp8266_print@ptr+1,f,c
+  1062  000A6E                     l182:
+  1063  000A6E  C004  FFF6         	movff	__esp8266_print@ptr,tblptrl
+  1064  000A72  C005  FFF7         	movff	__esp8266_print@ptr+1,tblptrh
+  1065  000A76  6AF8               	clrf	tblptru,c
+  1066  000A78  0E07               	movlw	(high __ramtop+-1)
+  1067  000A7A  64F7               	cpfsgt	tblptrh,c
+  1068  000A7C  D003               	bra	u697
+  1069  000A7E  0008               	tblrd		*
+  1070  000A80  50F5               	movf	tablat,w,c
+  1071  000A82  D005               	bra	u690
+  1072  000A84                     u697:
+  1073  000A84  CFF6 FFE9          	movff	tblptrl,fsr0l
+  1074  000A88  CFF7 FFEA          	movff	tblptrh,fsr0h
+  1075  000A8C  50EF               	movf	indf0,w,c
+  1076  000A8E                     u690:
+  1077  000A8E  0900               	iorlw	0
+  1078  000A90  B4D8               	btfsc	status,2,c
+  1079  000A92  0012               	return	
+  1080  000A94  D7D8               	goto	l183
+  1081  000A96                     __end_of__esp8266_print:
+  1082                           	opt stack 0
+  1083                           tblptru	equ	0xFF8
+  1084                           tblptrh	equ	0xFF7
+  1085                           tblptrl	equ	0xFF6
+  1086                           tablat	equ	0xFF5
+  1087                           prodh	equ	0xFF4
+  1088                           prodl	equ	0xFF3
+  1089                           indf0	equ	0xFEF
+  1090                           postinc0	equ	0xFEE
+  1091                           fsr0h	equ	0xFEA
+  1092                           fsr0l	equ	0xFE9
+  1093                           wreg	equ	0xFE8
+  1094                           postinc1	equ	0xFE6
+  1095                           postdec1	equ	0xFE5
+  1096                           plusw1	equ	0xFE3
+  1097                           fsr1h	equ	0xFE2
+  1098                           fsr1l	equ	0xFE1
+  1099                           indf2	equ	0xFDF
+  1100                           postinc2	equ	0xFDE
+  1101                           postdec2	equ	0xFDD
+  1102                           plusw2	equ	0xFDB
+  1103                           fsr2h	equ	0xFDA
+  1104                           fsr2l	equ	0xFD9
+  1105                           status	equ	0xFD8
+  1106                           
+  1107 ;; *************** function __esp8266_putch *****************
+  1108 ;; Defined at:
+  1109 ;;		line 48 in file "include/esp8266.c"
+  1110 ;; Parameters:    Size  Location     Type
+  1111 ;;  bt              1    wreg     unsigned char 
+  1112 ;; Auto vars:     Size  Location     Type
+  1113 ;;  bt              1    2[COMRAM] unsigned char 
+  1114 ;; Return value:  Size  Location     Type
+  1115 ;;                  1    wreg      void 
+  1116 ;; Registers used:
+  1117 ;;		wreg, status,2, cstack
+  1118 ;; Tracked objects:
+  1119 ;;		On entry : 0/0
+  1120 ;;		On exit  : 0/0
+  1121 ;;		Unchanged: 0/0
+  1122 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1123 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1124 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1125 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1126 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1127 ;;Total ram usage:        1 bytes
+  1128 ;; Hardware stack levels used:    1
+  1129 ;; Hardware stack levels required when called:    2
+  1130 ;; This function calls:
+  1131 ;;		_SendUnsignedByte
+  1132 ;; This function is called by:
+  1133 ;;		__esp8266_print
+  1134 ;;		_ESP8266_send_string
+  1135 ;;		_esp8266_echoCmds
+  1136 ;;		_esp8266_mode
+  1137 ;; This function uses a non-reentrant model
+  1138 ;;
+  1139                           
+  1140                           	psect	text5
+  1141  000BA2                     __ptext5:
+  1142                           	opt stack 0
+  1143  000BA2                     __esp8266_putch:
+  1144                           	opt stack 26
+  1145                           
+  1146                           ;incstack = 0
+  1147                           ;__esp8266_putch@bt stored from wreg
+  1148  000BA2  6E03               	movwf	__esp8266_putch@bt,c
+  1149                           
+  1150                           ;esp8266.c: 51: SendUnsignedByte(bt);
+  1151  000BA4  5003               	movf	__esp8266_putch@bt,w,c
+  1152  000BA6  ECC4  F005         	call	_SendUnsignedByte
+  1153  000BAA  0012               	return		;funcret
+  1154  000BAC                     __end_of__esp8266_putch:
+  1155                           	opt stack 0
+  1156                           tblptru	equ	0xFF8
+  1157                           tblptrh	equ	0xFF7
+  1158                           tblptrl	equ	0xFF6
+  1159                           tablat	equ	0xFF5
+  1160                           prodh	equ	0xFF4
+  1161                           prodl	equ	0xFF3
+  1162                           indf0	equ	0xFEF
+  1163                           postinc0	equ	0xFEE
+  1164                           fsr0h	equ	0xFEA
+  1165                           fsr0l	equ	0xFE9
+  1166                           wreg	equ	0xFE8
+  1167                           postinc1	equ	0xFE6
+  1168                           postdec1	equ	0xFE5
+  1169                           plusw1	equ	0xFE3
+  1170                           fsr1h	equ	0xFE2
+  1171                           fsr1l	equ	0xFE1
+  1172                           indf2	equ	0xFDF
+  1173                           postinc2	equ	0xFDE
+  1174                           postdec2	equ	0xFDD
+  1175                           plusw2	equ	0xFDB
+  1176                           fsr2h	equ	0xFDA
+  1177                           fsr2l	equ	0xFD9
+  1178                           status	equ	0xFD8
+  1179                           
+  1180 ;; *************** function _SendUnsignedByte *****************
+  1181 ;; Defined at:
+  1182 ;;		line 19 in file "include/uart.c"
+  1183 ;; Parameters:    Size  Location     Type
+  1184 ;;  byte            1    wreg     unsigned char 
+  1185 ;; Auto vars:     Size  Location     Type
+  1186 ;;  byte            1    1[COMRAM] unsigned char 
+  1187 ;; Return value:  Size  Location     Type
+  1188 ;;                  1    wreg      void 
+  1189 ;; Registers used:
+  1190 ;;		wreg, status,2, cstack
+  1191 ;; Tracked objects:
+  1192 ;;		On entry : 0/0
+  1193 ;;		On exit  : 0/0
+  1194 ;;		Unchanged: 0/0
+  1195 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1196 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1197 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1198 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1199 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1200 ;;Total ram usage:        1 bytes
+  1201 ;; Hardware stack levels used:    1
+  1202 ;; Hardware stack levels required when called:    1
+  1203 ;; This function calls:
+  1204 ;;		_WriteUSART
+  1205 ;; This function is called by:
+  1206 ;;		__esp8266_putch
+  1207 ;; This function uses a non-reentrant model
+  1208 ;;
+  1209                           
+  1210                           	psect	text6
+  1211  000B88                     __ptext6:
+  1212                           	opt stack 0
+  1213  000B88                     _SendUnsignedByte:
+  1214                           	opt stack 26
+  1215                           
+  1216                           ;incstack = 0
+  1217                           ;SendUnsignedByte@byte stored from wreg
+  1218  000B88  6E02               	movwf	SendUnsignedByte@byte,c
+  1219  000B8A                     
+  1220                           ;uart.c: 21: while(!TXSTA1bits.TRMT);
+  1221  000B8A  A2AC               	btfss	4012,1,c	;volatile
+  1222  000B8C  D7FE               	goto	l1343
+  1223                           
+  1224                           ;uart.c: 22: WriteUSART(byte);
+  1225  000B8E  5002               	movf	SendUnsignedByte@byte,w,c
+  1226  000B90  ECAB  F005         	call	_WriteUSART
+  1227  000B94  0012               	return		;funcret
+  1228  000B96                     __end_of_SendUnsignedByte:
+  1229                           	opt stack 0
+  1230                           tblptru	equ	0xFF8
+  1231                           tblptrh	equ	0xFF7
+  1232                           tblptrl	equ	0xFF6
+  1233                           tablat	equ	0xFF5
+  1234                           prodh	equ	0xFF4
+  1235                           prodl	equ	0xFF3
+  1236                           indf0	equ	0xFEF
+  1237                           postinc0	equ	0xFEE
+  1238                           fsr0h	equ	0xFEA
+  1239                           fsr0l	equ	0xFE9
+  1240                           wreg	equ	0xFE8
+  1241                           postinc1	equ	0xFE6
+  1242                           postdec1	equ	0xFE5
+  1243                           plusw1	equ	0xFE3
+  1244                           fsr1h	equ	0xFE2
+  1245                           fsr1l	equ	0xFE1
+  1246                           indf2	equ	0xFDF
+  1247                           postinc2	equ	0xFDE
+  1248                           postdec2	equ	0xFDD
+  1249                           plusw2	equ	0xFDB
+  1250                           fsr2h	equ	0xFDA
+  1251                           fsr2l	equ	0xFD9
+  1252                           status	equ	0xFD8
+  1253                           
+  1254 ;; *************** function _WriteUSART *****************
+  1255 ;; Defined at:
+  1256 ;;		line 13 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\plib\USART\uwrite.c"
+  1257 ;; Parameters:    Size  Location     Type
+  1258 ;;  data            1    wreg     unsigned char 
+  1259 ;; Auto vars:     Size  Location     Type
+  1260 ;;  data            1    0[COMRAM] unsigned char 
+  1261 ;; Return value:  Size  Location     Type
+  1262 ;;                  1    wreg      void 
+  1263 ;; Registers used:
+  1264 ;;		wreg
+  1265 ;; Tracked objects:
+  1266 ;;		On entry : 0/0
+  1267 ;;		On exit  : 0/0
+  1268 ;;		Unchanged: 0/0
+  1269 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1270 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1271 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1272 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1273 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1274 ;;Total ram usage:        1 bytes
+  1275 ;; Hardware stack levels used:    1
+  1276 ;; This function calls:
+  1277 ;;		Nothing
+  1278 ;; This function is called by:
+  1279 ;;		_SendUnsignedByte
+  1280 ;;		_SendByte
+  1281 ;; This function uses a non-reentrant model
+  1282 ;;
+  1283                           
+  1284                           	psect	text7
+  1285  000B56                     __ptext7:
+  1286                           	opt stack 0
+  1287  000B56                     _WriteUSART:
+  1288                           	opt stack 26
+  1289                           
+  1290                           ;incstack = 0
+  1291                           ;WriteUSART@data stored from wreg
+  1292  000B56  6E01               	movwf	WriteUSART@data,c
+  1293  000B58  ACAC               	btfss	4012,6,c	;volatile
+  1294  000B5A  D003               	goto	l292
+  1295  000B5C  90AC               	bcf	4012,0,c	;volatile
+  1296  000B5E  B237               	btfsc	_USART_Status,1,c
+  1297  000B60  80AC               	bsf	4012,0,c	;volatile
+  1298  000B62                     l292:
+  1299  000B62  C001  FFAD         	movff	WriteUSART@data,4013	;volatile
+  1300  000B66  0012               	return		;funcret
+  1301  000B68                     __end_of_WriteUSART:
+  1302                           	opt stack 0
+  1303                           tblptru	equ	0xFF8
+  1304                           tblptrh	equ	0xFF7
+  1305                           tblptrl	equ	0xFF6
+  1306                           tablat	equ	0xFF5
+  1307                           prodh	equ	0xFF4
+  1308                           prodl	equ	0xFF3
+  1309                           indf0	equ	0xFEF
+  1310                           postinc0	equ	0xFEE
+  1311                           fsr0h	equ	0xFEA
+  1312                           fsr0l	equ	0xFE9
+  1313                           wreg	equ	0xFE8
+  1314                           postinc1	equ	0xFE6
+  1315                           postdec1	equ	0xFE5
+  1316                           plusw1	equ	0xFE3
+  1317                           fsr1h	equ	0xFE2
+  1318                           fsr1l	equ	0xFE1
+  1319                           indf2	equ	0xFDF
+  1320                           postinc2	equ	0xFDE
+  1321                           postdec2	equ	0xFDD
+  1322                           plusw2	equ	0xFDB
+  1323                           fsr2h	equ	0xFDA
+  1324                           fsr2l	equ	0xFD9
+  1325                           status	equ	0xFD8
+  1326                           
+  1327 ;; *************** function _delay_ms *****************
+  1328 ;; Defined at:
+  1329 ;;		line 89 in file "include/config.c"
+  1330 ;; Parameters:    Size  Location     Type
+  1331 ;;  timeMS          2    0[COMRAM] int 
+  1332 ;; Auto vars:     Size  Location     Type
+  1333 ;;		None
+  1334 ;; Return value:  Size  Location     Type
+  1335 ;;                  1    wreg      void 
+  1336 ;; Registers used:
+  1337 ;;		wreg, status,2, status,0
+  1338 ;; Tracked objects:
+  1339 ;;		On entry : 0/0
+  1340 ;;		On exit  : 0/0
+  1341 ;;		Unchanged: 0/0
+  1342 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1343 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1344 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1345 ;;      Temps:          1       0       0       0       0       0       0       0       0
+  1346 ;;      Totals:         3       0       0       0       0       0       0       0       0
+  1347 ;;Total ram usage:        3 bytes
+  1348 ;; Hardware stack levels used:    1
+  1349 ;; This function calls:
+  1350 ;;		Nothing
+  1351 ;; This function is called by:
+  1352 ;;		_main
+  1353 ;; This function uses a non-reentrant model
+  1354 ;;
+  1355                           
+  1356                           	psect	text8
+  1357  000AFC                     __ptext8:
+  1358                           	opt stack 0
+  1359  000AFC                     _delay_ms:
+  1360                           	opt stack 30
+  1361                           
+  1362                           ;config.c: 91: while(timeMS--)
+  1363                           
+  1364                           ;incstack = 0
+  1365  000AFC  D007               	goto	l75
+  1366  000AFE                     l1421:
+  1367                           
+  1368                           ;config.c: 92: _delay((unsigned long)((1)*(24000000/4000.0)));
+  1369  000AFE  0E08               	movlw	8
+  1370  000B00  6E03               	movwf	??_delay_ms& (0+255),c
+  1371  000B02  0ECA               	movlw	202
+  1372  000B04                     u897:
+  1373  000B04  2EE8               	decfsz	wreg,f,c
+  1374  000B06  D7FE               	bra	u897
+  1375  000B08  2E03               	decfsz	??_delay_ms& (0+255),f,c
+  1376  000B0A  D7FC               	bra	u897
+  1377  000B0C                     l75:
+  1378  000B0C  0601               	decf	delay_ms@timeMS,f,c
+  1379  000B0E  A0D8               	btfss	status,0,c
+  1380  000B10  0602               	decf	delay_ms@timeMS+1,f,c
+  1381  000B12  2801               	incf	delay_ms@timeMS,w,c
+  1382  000B14  E1F4               	bnz	l1421
+  1383  000B16  2802               	incf	delay_ms@timeMS+1,w,c
+  1384  000B18  B4D8               	btfsc	status,2,c
+  1385  000B1A  0012               	return	
+  1386  000B1C  D7F0               	goto	l76
+  1387  000B1E                     __end_of_delay_ms:
+  1388                           	opt stack 0
+  1389                           tblptru	equ	0xFF8
+  1390                           tblptrh	equ	0xFF7
+  1391                           tblptrl	equ	0xFF6
+  1392                           tablat	equ	0xFF5
+  1393                           prodh	equ	0xFF4
+  1394                           prodl	equ	0xFF3
+  1395                           indf0	equ	0xFEF
+  1396                           postinc0	equ	0xFEE
+  1397                           fsr0h	equ	0xFEA
+  1398                           fsr0l	equ	0xFE9
+  1399                           wreg	equ	0xFE8
+  1400                           postinc1	equ	0xFE6
+  1401                           postdec1	equ	0xFE5
+  1402                           plusw1	equ	0xFE3
+  1403                           fsr1h	equ	0xFE2
+  1404                           fsr1l	equ	0xFE1
+  1405                           indf2	equ	0xFDF
+  1406                           postinc2	equ	0xFDE
+  1407                           postdec2	equ	0xFDD
+  1408                           plusw2	equ	0xFDB
+  1409                           fsr2h	equ	0xFDA
+  1410                           fsr2l	equ	0xFD9
+  1411                           status	equ	0xFD8
+  1412                           
+  1413 ;; *************** function _InitSerialUART *****************
+  1414 ;; Defined at:
+  1415 ;;		line 5 in file "include/uart.c"
+  1416 ;; Parameters:    Size  Location     Type
+  1417 ;;		None
+  1418 ;; Auto vars:     Size  Location     Type
+  1419 ;;		None
+  1420 ;; Return value:  Size  Location     Type
+  1421 ;;                  1    wreg      void 
+  1422 ;; Registers used:
+  1423 ;;		wreg, status,2, cstack
+  1424 ;; Tracked objects:
+  1425 ;;		On entry : 0/0
+  1426 ;;		On exit  : 0/0
+  1427 ;;		Unchanged: 0/0
+  1428 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1429 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1430 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1431 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1432 ;;      Totals:         0       0       0       0       0       0       0       0       0
+  1433 ;;Total ram usage:        0 bytes
+  1434 ;; Hardware stack levels used:    1
+  1435 ;; Hardware stack levels required when called:    1
+  1436 ;; This function calls:
+  1437 ;;		_OpenUSART
+  1438 ;; This function is called by:
+  1439 ;;		_main
+  1440 ;; This function uses a non-reentrant model
+  1441 ;;
+  1442                           
+  1443                           	psect	text9
+  1444  000B78                     __ptext9:
+  1445                           	opt stack 0
+  1446  000B78                     _InitSerialUART:
+  1447                           	opt stack 29
+  1448                           
+  1449                           ;uart.c: 8: OpenUSART(0b01111111
+  1450                           ;uart.c: 9: & 0b10111111
+  1451                           ;uart.c: 10: & 0b11111110
+  1452                           ;uart.c: 11: & 0b11111101
+  1453                           ;uart.c: 12: & 0b11111111
+  1454                           ;uart.c: 13: & 0b11111111 , 12);
+  1455                           
+  1456                           ;incstack = 0
+  1457  000B78  0E00               	movlw	0
+  1458  000B7A  6E02               	movwf	OpenUSART@spbrg+1,c
+  1459  000B7C  0E0C               	movlw	12
+  1460  000B7E  6E01               	movwf	OpenUSART@spbrg,c
+  1461  000B80  0E3C               	movlw	60
+  1462  000B82  ECF2  F004         	call	_OpenUSART
+  1463  000B86  0012               	return		;funcret
+  1464  000B88                     __end_of_InitSerialUART:
+  1465                           	opt stack 0
+  1466                           tblptru	equ	0xFF8
+  1467                           tblptrh	equ	0xFF7
+  1468                           tblptrl	equ	0xFF6
+  1469                           tablat	equ	0xFF5
+  1470                           prodh	equ	0xFF4
+  1471                           prodl	equ	0xFF3
+  1472                           indf0	equ	0xFEF
+  1473                           postinc0	equ	0xFEE
+  1474                           fsr0h	equ	0xFEA
+  1475                           fsr0l	equ	0xFE9
+  1476                           wreg	equ	0xFE8
+  1477                           postinc1	equ	0xFE6
+  1478                           postdec1	equ	0xFE5
+  1479                           plusw1	equ	0xFE3
+  1480                           fsr1h	equ	0xFE2
+  1481                           fsr1l	equ	0xFE1
+  1482                           indf2	equ	0xFDF
+  1483                           postinc2	equ	0xFDE
+  1484                           postdec2	equ	0xFDD
+  1485                           plusw2	equ	0xFDB
+  1486                           fsr2h	equ	0xFDA
+  1487                           fsr2l	equ	0xFD9
+  1488                           status	equ	0xFD8
+  1489                           
+  1490 ;; *************** function _OpenUSART *****************
+  1491 ;; Defined at:
+  1492 ;;		line 73 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\plib\USART\uopen.c"
+  1493 ;; Parameters:    Size  Location     Type
+  1494 ;;  config          1    wreg     unsigned char 
+  1495 ;;  spbrg           2    0[COMRAM] unsigned int 
+  1496 ;; Auto vars:     Size  Location     Type
+  1497 ;;  config          1    2[COMRAM] unsigned char 
+  1498 ;; Return value:  Size  Location     Type
+  1499 ;;                  1    wreg      void 
+  1500 ;; Registers used:
+  1501 ;;		wreg, status,2
+  1502 ;; Tracked objects:
+  1503 ;;		On entry : 0/0
+  1504 ;;		On exit  : 0/0
+  1505 ;;		Unchanged: 0/0
+  1506 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1507 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1508 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1509 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1510 ;;      Totals:         3       0       0       0       0       0       0       0       0
+  1511 ;;Total ram usage:        3 bytes
+  1512 ;; Hardware stack levels used:    1
+  1513 ;; This function calls:
+  1514 ;;		Nothing
+  1515 ;; This function is called by:
+  1516 ;;		_InitSerialUART
+  1517 ;; This function uses a non-reentrant model
+  1518 ;;
+  1519                           
+  1520                           	psect	text10
+  1521  0009E4                     __ptext10:
+  1522                           	opt stack 0
+  1523  0009E4                     _OpenUSART:
+  1524                           	opt stack 29
+  1525                           
+  1526                           ;incstack = 0
+  1527                           ;OpenUSART@config stored from wreg
+  1528  0009E4  6E03               	movwf	OpenUSART@config,c
+  1529  0009E6  0E00               	movlw	0
+  1530  0009E8  6EAC               	movwf	4012,c	;volatile
+  1531  0009EA  0E00               	movlw	0
+  1532  0009EC  6EAB               	movwf	4011,c	;volatile
+  1533  0009EE  B003               	btfsc	OpenUSART@config,0,c
+  1534  0009F0  88AC               	bsf	4012,4,c	;volatile
+  1535  0009F2  A203               	btfss	OpenUSART@config,1,c
+  1536  0009F4  D002               	goto	l258
+  1537  0009F6  8CAC               	bsf	4012,6,c	;volatile
+  1538  0009F8  8CAB               	bsf	4011,6,c	;volatile
+  1539  0009FA                     l258:
+  1540  0009FA  B403               	btfsc	OpenUSART@config,2,c
+  1541  0009FC  8EAC               	bsf	4012,7,c	;volatile
+  1542  0009FE  A603               	btfss	OpenUSART@config,3,c
+  1543  000A00  D002               	goto	l260
+  1544  000A02  88AB               	bsf	4011,4,c	;volatile
+  1545  000A04  D001               	goto	l261
+  1546  000A06                     l260:
+  1547  000A06  8AAB               	bsf	4011,5,c	;volatile
+  1548  000A08                     l261:
+  1549  000A08  B803               	btfsc	OpenUSART@config,4,c
+  1550  000A0A  84AC               	bsf	4012,2,c	;volatile
+  1551  000A0C  989E               	bcf	3998,4,c	;volatile
+  1552  000A0E  BA03               	btfsc	OpenUSART@config,5,c
+  1553  000A10  86AB               	bsf	4011,3,c	;volatile
+  1554  000A12  AC03               	btfss	OpenUSART@config,6,c
+  1555  000A14  D002               	goto	l264
+  1556  000A16  8A9D               	bsf	3997,5,c	;volatile
+  1557  000A18  D001               	goto	l265
+  1558  000A1A                     l264:
+  1559  000A1A  9A9D               	bcf	3997,5,c	;volatile
+  1560  000A1C                     l265:
+  1561  000A1C  9A9E               	bcf	3998,5,c	;volatile
+  1562  000A1E  AE03               	btfss	OpenUSART@config,7,c
+  1563  000A20  D002               	goto	l266
+  1564  000A22  889D               	bsf	3997,4,c	;volatile
+  1565  000A24  D001               	goto	l267
+  1566  000A26                     l266:
+  1567  000A26  989D               	bcf	3997,4,c	;volatile
+  1568  000A28                     l267:
+  1569  000A28  C001  FFAF         	movff	OpenUSART@spbrg,4015	;volatile
+  1570  000A2C  5002               	movf	OpenUSART@spbrg+1,w,c
+  1571  000A2E  6EB0               	movwf	4016,c	;volatile
+  1572  000A30  8AAC               	bsf	4012,5,c	;volatile
+  1573  000A32  8EAB               	bsf	4011,7,c	;volatile
+  1574  000A34  9C94               	bcf	3988,6,c	;volatile
+  1575  000A36  8E94               	bsf	3988,7,c	;volatile
+  1576  000A38  A8AC               	btfss	4012,4,c	;volatile
+  1577  000A3A  0012               	return	
+  1578  000A3C  BEAC               	btfsc	4012,7,c	;volatile
+  1579  000A3E  0012               	return	
+  1580  000A40  8C94               	bsf	3988,6,c	;volatile
+  1581  000A42  0012               	return	
+  1582  000A44                     __end_of_OpenUSART:
+  1583                           	opt stack 0
+  1584                           tblptru	equ	0xFF8
+  1585                           tblptrh	equ	0xFF7
+  1586                           tblptrl	equ	0xFF6
+  1587                           tablat	equ	0xFF5
+  1588                           prodh	equ	0xFF4
+  1589                           prodl	equ	0xFF3
+  1590                           indf0	equ	0xFEF
+  1591                           postinc0	equ	0xFEE
+  1592                           fsr0h	equ	0xFEA
+  1593                           fsr0l	equ	0xFE9
+  1594                           wreg	equ	0xFE8
+  1595                           postinc1	equ	0xFE6
+  1596                           postdec1	equ	0xFE5
+  1597                           plusw1	equ	0xFE3
+  1598                           fsr1h	equ	0xFE2
+  1599                           fsr1l	equ	0xFE1
+  1600                           indf2	equ	0xFDF
+  1601                           postinc2	equ	0xFDE
+  1602                           postdec2	equ	0xFDD
+  1603                           plusw2	equ	0xFDB
+  1604                           fsr2h	equ	0xFDA
+  1605                           fsr2l	equ	0xFD9
+  1606                           status	equ	0xFD8
+  1607                           
+  1608 ;; *************** function _InitConfigPorts *****************
+  1609 ;; Defined at:
+  1610 ;;		line 73 in file "include/config.c"
+  1611 ;; Parameters:    Size  Location     Type
+  1612 ;;		None
+  1613 ;; Auto vars:     Size  Location     Type
+  1614 ;;		None
+  1615 ;; Return value:  Size  Location     Type
+  1616 ;;                  1    wreg      void 
+  1617 ;; Registers used:
+  1618 ;;		wreg, status,2
+  1619 ;; Tracked objects:
+  1620 ;;		On entry : 0/0
+  1621 ;;		On exit  : 0/0
+  1622 ;;		Unchanged: 0/0
+  1623 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1624 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1625 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1626 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1627 ;;      Totals:         0       0       0       0       0       0       0       0       0
+  1628 ;;Total ram usage:        0 bytes
+  1629 ;; Hardware stack levels used:    1
+  1630 ;; This function calls:
+  1631 ;;		Nothing
+  1632 ;; This function is called by:
+  1633 ;;		_main
+  1634 ;; This function uses a non-reentrant model
+  1635 ;;
+  1636                           
+  1637                           	psect	text11
+  1638  000B3C                     __ptext11:
+  1639                           	opt stack 0
+  1640  000B3C                     _InitConfigPorts:
+  1641                           	opt stack 30
+  1642                           
+  1643                           ;config.c: 77: TRISA = 0b00000011;
+  1644                           
+  1645                           ;incstack = 0
+  1646  000B3C  0E03               	movlw	3
+  1647  000B3E  6E92               	movwf	3986,c	;volatile
+  1648                           
+  1649                           ;config.c: 78: TRISB = 0b11110000;
+  1650  000B40  0EF0               	movlw	240
+  1651  000B42  6E93               	movwf	3987,c	;volatile
+  1652                           
+  1653                           ;config.c: 79: TRISC = 0b10000000;
+  1654  000B44  0E80               	movlw	128
+  1655  000B46  6E94               	movwf	3988,c	;volatile
+  1656                           
+  1657                           ;config.c: 80: TRISD = 0b00000000;
+  1658  000B48  0E00               	movlw	0
+  1659  000B4A  6E95               	movwf	3989,c	;volatile
+  1660                           
+  1661                           ;config.c: 81: TRISE = 0b00000000;
+  1662  000B4C  0E00               	movlw	0
+  1663  000B4E  6E96               	movwf	3990,c	;volatile
+  1664                           
+  1665                           ;config.c: 84: LATC1 = 0;;
+  1666  000B50  928B               	bcf	3979,1,c	;volatile
+  1667                           
+  1668                           ;config.c: 85: LATC2 = 0;;
+  1669  000B52  948B               	bcf	3979,2,c	;volatile
+  1670  000B54  0012               	return		;funcret
+  1671  000B56                     __end_of_InitConfigPorts:
+  1672                           	opt stack 0
+  1673                           tblptru	equ	0xFF8
+  1674                           tblptrh	equ	0xFF7
+  1675                           tblptrl	equ	0xFF6
+  1676                           tablat	equ	0xFF5
+  1677                           prodh	equ	0xFF4
+  1678                           prodl	equ	0xFF3
+  1679                           indf0	equ	0xFEF
+  1680                           postinc0	equ	0xFEE
+  1681                           fsr0h	equ	0xFEA
+  1682                           fsr0l	equ	0xFE9
+  1683                           wreg	equ	0xFE8
+  1684                           postinc1	equ	0xFE6
+  1685                           postdec1	equ	0xFE5
+  1686                           plusw1	equ	0xFE3
+  1687                           fsr1h	equ	0xFE2
+  1688                           fsr1l	equ	0xFE1
+  1689                           indf2	equ	0xFDF
+  1690                           postinc2	equ	0xFDE
+  1691                           postdec2	equ	0xFDD
+  1692                           plusw2	equ	0xFDB
+  1693                           fsr2h	equ	0xFDA
+  1694                           fsr2l	equ	0xFD9
+  1695                           status	equ	0xFD8
+  1696                           tblptru	equ	0xFF8
+  1697                           tblptrh	equ	0xFF7
+  1698                           tblptrl	equ	0xFF6
+  1699                           tablat	equ	0xFF5
+  1700                           prodh	equ	0xFF4
+  1701                           prodl	equ	0xFF3
+  1702                           indf0	equ	0xFEF
+  1703                           postinc0	equ	0xFEE
+  1704                           fsr0h	equ	0xFEA
+  1705                           fsr0l	equ	0xFE9
+  1706                           wreg	equ	0xFE8
+  1707                           postinc1	equ	0xFE6
+  1708                           postdec1	equ	0xFE5
+  1709                           plusw1	equ	0xFE3
+  1710                           fsr1h	equ	0xFE2
+  1711                           fsr1l	equ	0xFE1
+  1712                           indf2	equ	0xFDF
+  1713                           postinc2	equ	0xFDE
+  1714                           postdec2	equ	0xFDD
+  1715                           plusw2	equ	0xFDB
+  1716                           fsr2h	equ	0xFDA
+  1717                           fsr2l	equ	0xFD9
+  1718                           status	equ	0xFD8
+  1719                           
+  1720                           	psect	rparam
+  1721  0000                     tblptru	equ	0xFF8
+  1722                           tblptrh	equ	0xFF7
+  1723                           tblptrl	equ	0xFF6
+  1724                           tablat	equ	0xFF5
+  1725                           prodh	equ	0xFF4
+  1726                           prodl	equ	0xFF3
+  1727                           indf0	equ	0xFEF
+  1728                           postinc0	equ	0xFEE
+  1729                           fsr0h	equ	0xFEA
+  1730                           fsr0l	equ	0xFE9
+  1731                           wreg	equ	0xFE8
+  1732                           postinc1	equ	0xFE6
+  1733                           postdec1	equ	0xFE5
+  1734                           plusw1	equ	0xFE3
+  1735                           fsr1h	equ	0xFE2
+  1736                           fsr1l	equ	0xFE1
+  1737                           indf2	equ	0xFDF
+  1738                           postinc2	equ	0xFDE
+  1739                           postdec2	equ	0xFDD
+  1740                           plusw2	equ	0xFDB
+  1741                           fsr2h	equ	0xFDA
+  1742                           fsr2l	equ	0xFD9
+  1743                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     159
+    Constant    22
+    Data        12
+    BSS         18
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     37      67
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    _esp8266_waitResponse@strings	PTR const unsigned char [6] size(2) Largest target is 10
+		 -> STR_33(CODE[7]), STR_32(CODE[7]), STR_31(CODE[10]), STR_30(CODE[5]), 
+		 -> STR_29(CODE[6]), STR_28(CODE[3]), 
+
+    _esp8266_waitResponse@F4816	PTR const unsigned char [6] size(2) Largest target is 10
+		 -> STR_33(CODE[7]), STR_32(CODE[7]), STR_31(CODE[10]), STR_30(CODE[5]), 
+		 -> STR_29(CODE[6]), STR_28(CODE[3]), 
+
+    _esp8266_print@ptr	PTR const unsigned char  size(2) Largest target is 14
+		 -> STR_24(CODE[3]), STR_23(CODE[12]), esp8266_send@length_str(COMRAM[6]), STR_21(CODE[3]), 
+		 -> esp8266_start@port_str(COMRAM[5]), STR_19(CODE[3]), STR_18(CODE[4]), STR_17(CODE[4]), 
+		 -> STR_16(CODE[4]), STR_15(CODE[14]), STR_13(CODE[11]), STR_11(CODE[11]), 
+		 -> STR_10(CODE[4]), STR_9(CODE[4]), STR_8(CODE[11]), STR_7(CODE[3]), 
+		 -> STR_6(CODE[11]), STR_4(CODE[3]), STR_3(CODE[4]), STR_2(CODE[9]), 
+		 -> STR_1(CODE[5]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _esp8266_isStarted->__esp8266_waitResponse
+    __esp8266_print->__esp8266_putch
+    __esp8266_putch->_SendUnsignedByte
+    _SendUnsignedByte->_WriteUSART
+    _InitSerialUART->_OpenUSART
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0    2766
+                    _InitConfigPorts
+                     _InitSerialUART
+                           _delay_ms
+                  _esp8266_isStarted
+ ---------------------------------------------------------------------------------
+ (1) _esp8266_isStarted                                    0     0      0    2296
+                     __esp8266_print
+              __esp8266_waitResponse
+ ---------------------------------------------------------------------------------
+ (2) __esp8266_waitResponse                               37    37      0     285
+                                              0 COMRAM    37    37      0
+                     __esp8266_getch
+ ---------------------------------------------------------------------------------
+ (3) __esp8266_getch                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) __esp8266_print                                       2     0      2    2011
+                                              3 COMRAM     2     0      2
+                     __esp8266_putch
+ ---------------------------------------------------------------------------------
+ (3) __esp8266_putch                                       1     1      0      66
+                                              2 COMRAM     1     1      0
+                   _SendUnsignedByte
+ ---------------------------------------------------------------------------------
+ (4) _SendUnsignedByte                                     1     1      0      44
+                                              1 COMRAM     1     1      0
+                         _WriteUSART
+ ---------------------------------------------------------------------------------
+ (5) _WriteUSART                                           1     1      0      22
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _delay_ms                                             3     1      2     174
+                                              0 COMRAM     3     1      2
+ ---------------------------------------------------------------------------------
+ (1) _InitSerialUART                                       0     0      0     296
+                          _OpenUSART
+ ---------------------------------------------------------------------------------
+ (2) _OpenUSART                                            3     1      2     296
+                                              0 COMRAM     3     1      2
+ ---------------------------------------------------------------------------------
+ (1) _InitConfigPorts                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _InitConfigPorts
+   _InitSerialUART
+     _OpenUSART
+   _delay_ms
+   _esp8266_isStarted
+     __esp8266_print
+       __esp8266_putch
+         _SendUnsignedByte
+           _WriteUSART
+     __esp8266_waitResponse
+       __esp8266_getch
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7FF      0       0      21        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     25      43       1       70.5%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      43      20        0.0%
+DATA                 0      0      43       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.45 build -152302408 
+Symbol Table                                                                                   Wed May 09 18:30:16 2018
+
+                 ??_SendUnsignedByte 0002                                   l15 0AD4  
+                                 l75 0B0C                                   l76 0AFE  
+                        __CFG_BOR$ON 000000                          __CFG_BORV$3 000000  
+                       __CFG_CP0$OFF 000000                         __CFG_CP1$OFF 000000  
+                       __CFG_CP2$OFF 000000                         __CFG_CP3$OFF 000000  
+                 __esp8266_print@ptr 0004                          __CFG_LVP$ON 000000  
+                        __CFG_WDT$ON 000000                                  l104 0B70  
+                                l204 0912                                  l205 0924  
+                                l207 09C2                                  l209 09D6  
+                                l260 0A06                                  l261 0A08  
+                                l182 0A6E                                  l183 0A46  
+                                l264 0A1A                                  l265 0A1C  
+                                l266 0A26                                  l258 09FA  
+                                l267 0A28                                  l292 0B62  
+                 esp8266_start@F4793 0032                         __CFG_CPB$OFF 000000  
+                                u200 08D8                                  u211 08EC  
+                                u220 0902                                  u260 09DA  
+                                u191 08C2                         __CFG_CPD$OFF 000000  
+                                u730 0ADE                                  u680 0A66  
+                                u690 0A8E                                  u687 0A5C  
+                                u697 0A84                                  u897 0B04  
+                                prod 000FF3                                  wreg 000FE8  
+                         _TXSTA1bits 000FAC                                 l1331 0B38  
+                               l1421 0AFE                                 l1085 091C  
+                               l1343 0B8A                                 STR_1 088F  
+                               STR_2 0867                                 STR_3 08A1  
+                               STR_5 08B0                                 STR_6 0852  
+                               STR_8 0847                                 STR_9 089D  
+                               _CREN 007D5C                                 _RCIF 007CF5  
+                               _OERR 007D59                                 _main 0ACC  
+                               fsr0h 000FEA                                 indf0 000FEF  
+                               fsr0l 000FE9                                 indf2 000FDF  
+                               fsr1l 000FE1                                 fsr2l 000FD9  
+                               prodh 000FF4                                 prodl 000FF3  
+                               start 0000                        __CFG_IESO$OFF 000000  
+                      __CFG_MCLRE$ON 000000                         ___param_bank 000000  
+                      __CFG_PLLDIV$5 000000                       __CFG_CCP2MX$ON 000000  
+                              ?_main 0001                                STR_10 0899  
+                              STR_11 0831                                STR_20 08B3  
+                              STR_13 083C                                STR_30 0894  
+                              STR_23 0825                                STR_15 0817  
+                              STR_31 085D                                STR_16 08A5  
+                              STR_32 0870                                STR_17 08A9  
+                              STR_25 087E                                STR_33 0877  
+                              STR_26 088A                                STR_19 08AD  
+                              STR_28 08B0                                STR_29 0884  
+                              _LATC1 007C59                                _LATC2 007C5A  
+                              _RCREG 000FAE                                _RCSTA 000FAB  
+                              _SPBRG 000FAF                        __CFG_USBDIV$1 000000  
+                              _TRISA 000F92                                _TRISB 000F93  
+                              _TRISC 000F94                                _TRISD 000F95  
+                              _TRISE 000F96                                _TXREG 000FAD  
+                              _TXSTA 000FAC                        __CFG_PWRT$OFF 000000  
+                      __CFG_WRT0$OFF 000000                        __CFG_WRT1$OFF 000000  
+                      __CFG_WRT2$OFF 000000                        __CFG_WRT3$OFF 000000  
+              __esp8266_waitResponse 08B8                       delay_ms@timeMS 0001  
+                     __CFG_EBTR0$OFF 000000                       __CFG_FCMEN$OFF 000000  
+                     __CFG_EBTR1$OFF 000000                       __CFG_EBTR2$OFF 000000  
+                     __CFG_EBTR3$OFF 000000                        __CFG_WRTB$OFF 000000  
+                      __CFG_WRTC$OFF 000000                        __CFG_WRTD$OFF 000000  
+                     __CFG_EBTRB$OFF 000000                      __end_of_dpowers 080B  
+                              tablat 000FF5                                plusw1 000FE3  
+                              plusw2 000FDB                                status 000FD8  
+                     __CFG_ICPRT$OFF 000000                       __CFG_PBADEN$ON 000000  
+                     WriteUSART@data 0001                      __initialization 0A96  
+                    _InitConfigPorts 0B3C                         __end_of_main 0AFC  
+                             ??_main 0026                        __activetblptr 000002  
+                     _InitSerialUART 0B78                               _SPBRGH 000FB0  
+                     __esp8266_getch 0B68                       __esp8266_print 0A44  
+                     __esp8266_putch 0BA2                     __end_of_delay_ms 0B1E  
+                     __CFG_XINST$OFF 000000                   __size_of_OpenUSART 0060  
+                     __CFG_STVREN$ON 000000                               clear_0 0ABC  
+             __end_of_InitSerialUART 0B88               ?__esp8266_waitResponse 0001  
+                       __pdataCOMRAM 0038                         __mediumconst 0000  
+                             tblptrh 000FF7                               tblptrl 000FF6  
+                             tblptru 000FF8               __end_of__esp8266_getch 0B78  
+             __end_of__esp8266_print 0A96               __end_of__esp8266_putch 0BAC  
+                         __accesstop 0060              __end_of__initialization 0AC2  
+            __end_of_InitConfigPorts 0B56                        ___rparam_used 000001  
+__esp8266_waitResponse@continue_loop 0024                           _WriteUSART 0B56  
+                     __pcstackCOMRAM 0001                      ?_InitSerialUART 0001  
+                  _esp8266_isStarted 0B1E            __size_of_SendUnsignedByte 000E  
+                 ?_esp8266_isStarted 0001                    __end_of_OpenUSART 0A44  
+                    ?__esp8266_getch 0001                      ?__esp8266_print 0004  
+                    ?__esp8266_putch 0001      __esp8266_waitResponse@responses 0016  
+                ??_esp8266_isStarted 0026        __esp8266_waitResponse@lengths 0010  
+      __esp8266_waitResponse@strings 0004            __end_of_esp8266_isStarted 0B3C  
+                          ?_delay_ms 0001                      __CFG_VREGEN$OFF 000000  
+                   ?_InitConfigPorts 0001              __esp8266_waitResponse@i 0025  
+                            __Hparam 0000                              __Lparam 0000  
+                        ?_WriteUSART 0001                         __psmallconst 0800  
+                            __pcinit 0A96                              __ramtop 0800  
+                            __ptext0 0ACC                              __ptext1 0B1E  
+                            __ptext2 08B8                              __ptext3 0B68  
+                            __ptext4 0A44                              __ptext5 0BA2  
+                            __ptext6 0B88                              __ptext7 0B56  
+                            __ptext8 0AFC                              __ptext9 0B78  
+                            _dpowers 0801                           ??_delay_ms 0003  
+               end_of_initialization 0AC2                        __Lmediumconst 0000  
+               SendUnsignedByte@byte 0002                            _RCSTAbits 000FAB  
+                            postdec1 000FE5                              postdec2 000FDD  
+                            postinc0 000FEE                              postinc1 000FE6  
+                            postinc2 000FDE              ??__esp8266_waitResponse 0001  
+         __size_of_esp8266_isStarted 001E                     _SendUnsignedByte 0B88  
+                          _TRISCbits 000F94                  __size_of_WriteUSART 0012  
+                  __esp8266_putch@bt 0003                            _TXSTAbits 000FAC  
+                   ??_InitSerialUART 0004                        __pidataCOMRAM 0B96  
+                start_initialization 0A96                     ??__esp8266_getch 0001  
+                   ??__esp8266_print 0006                     ??__esp8266_putch 0003  
+                          _OpenUSART 09E4                     __CFG_LPT1OSC$OFF 000000  
+                        __pbssCOMRAM 0026                    __size_of_delay_ms 0022  
+     __esp8266_waitResponse@received 0022                           ?_OpenUSART 0001  
+     __esp8266_waitResponse@response 0023         __esp8266_waitResponse@so_far 001C  
+                       ??_WriteUSART 0001                          __smallconst 0800  
+                 __end_of_WriteUSART 0B68                             _PIE1bits 000F9D  
+           __end_of_SendUnsignedByte 0B96                             _PIR1bits 000F9E  
+                   __CFG_WDTPS$32768 000000             __size_of_InitConfigPorts 001A  
+     __size_of__esp8266_waitResponse 012C        __end_of__esp8266_waitResponse 09E4  
+                          copy_data0 0AAA                          ??_OpenUSART 0003  
+                    OpenUSART@config 0003                             __Hrparam 0000  
+                           __Lrparam 0000          __esp8266_waitResponse@F4812 0026  
+__end_of__esp8266_waitResponse@F4814 0817          __esp8266_waitResponse@F4814 0811  
+        __esp8266_waitResponse@F4816 0038  __end_of__esp8266_waitResponse@F4818 0811  
+        __esp8266_waitResponse@F4818 080B                             _delay_ms 0AFC  
+                           __ptext10 09E4                             __ptext11 0B3C  
+                      __size_of_main 0030                __CFG_CPUDIV$OSC3_PLL4 000000  
+                  ??_InitConfigPorts 0001                       OpenUSART@spbrg 0001  
+                  esp8266_send@F4796 002C              __size_of_InitSerialUART 0010  
+                 __CFG_FOSC$HSPLL_HS 000000              __size_of__esp8266_getch 0010  
+            __size_of__esp8266_print 0052              __size_of__esp8266_putch 000A  
+                       _USART_Status 0037                    ?_SendUnsignedByte 0001  
